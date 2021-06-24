@@ -2,12 +2,12 @@ package algorithm;
 
 import java.util.Scanner;
 
-public class CodeUp1022 {
+public class CodeUp1029 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		System.out.println(input);
+        double input = scanner.nextDouble();
+        System.out.println(String.format("%.11f", input));
 	}
 
 }

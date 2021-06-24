@@ -2,12 +2,12 @@ package algorithm;
 
 import java.util.Scanner;
 
-public class CodeUp1022 {
+public class CodeUp1028 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		System.out.println(input);
+        long input = scanner.nextLong();
+        System.out.println(input);
 	}
 
 }
