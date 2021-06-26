@@ -15,6 +15,7 @@ public class CodeUp1045 {
 		System.out.println(number1 / number2);
 		System.out.println(number1 % number2);
 		System.out.printf("%.2f", value);
+		scanner.close();
 	}
 
 }

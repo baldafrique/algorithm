@@ -6,17 +6,21 @@ public class CodeUp1091 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int initial = scanner.nextInt();
-		int multiplication = scanner.nextInt();
-		int difference = scanner.nextInt();
-		int number = scanner.nextInt();
-		int answer = 0;
-		
-		for(int i=0; i<number; i++) {
-			initial = initial * multiplication + difference;
+		long initial = scanner.nextLong();
+		long multiplication = scanner.nextLong();
+		long difference = scanner.nextLong();
+		long number = scanner.nextLong();
+		long first = initial;
+		long second = initial;
+	
+		for(int i=1; i<number; i++) {
+			second = first * multiplication + difference;
+			first = second;
 		}
 		
-		System.out.println(initial);
+		System.out.println(second);
+		
+		scanner.close();
 	}
 
 }

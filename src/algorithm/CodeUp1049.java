@@ -11,6 +11,7 @@ public class CodeUp1049 {
 		
 		if(number1 > number2) System.out.println("1");
 		else System.out.println("0");
+		scanner.close();
 	}
 
 }

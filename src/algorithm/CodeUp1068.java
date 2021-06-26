@@ -11,6 +11,7 @@ public class CodeUp1068 {
 		else if (input >= 70) System.out.println("B");
 		else if (input >= 40) System.out.println("C");
 		else System.out.println("D");
+		scanner.close();
 	}
 
 }

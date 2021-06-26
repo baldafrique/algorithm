@@ -12,6 +12,7 @@ public class CodeUp1087 {
 			sum = i * (i+1) / 2;
 		}
 		System.out.println(sum);
+		scanner.close();
 	}
 
 }

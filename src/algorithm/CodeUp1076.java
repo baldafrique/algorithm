@@ -13,7 +13,7 @@ public class CodeUp1076 {
 		do {
 			System.out.print((char)count++ + " ");
 		}while(count<=number);
-		
+		scanner.close();
 	}
 
 }

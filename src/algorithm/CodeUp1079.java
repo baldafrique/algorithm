@@ -12,7 +12,7 @@ public class CodeUp1079 {
 			input = scanner.next();
 			System.out.println(input);
 		}
-		
+		scanner.close();
 	}
 
 }

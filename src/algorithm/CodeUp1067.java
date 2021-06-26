@@ -11,6 +11,7 @@ public class CodeUp1067 {
 		else System.out.println("minus");
 		if(input % 2 == 0) System.out.println("even");
 		else System.out.println("odd");
+		scanner.close();
 	}
 
 }

@@ -9,6 +9,7 @@ public class CodeUp1020 {
 		String input = scanner.next();
 		String[] array = input.split("-");
 		System.out.println(array[0]+array[1]);
+		scanner.close();
 	}
 
 }

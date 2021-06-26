@@ -10,6 +10,7 @@ public class CodeUp1026 {
 		String[] array = input.split(":");
 		int minute = Integer.parseInt(array[1]);
 		System.out.println(minute);
+		scanner.close();
 	}
 
 }

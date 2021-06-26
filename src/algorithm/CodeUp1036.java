@@ -10,6 +10,7 @@ public class CodeUp1036 {
         char data = input.charAt(0);
         int number = (int)data;
         System.out.println(number);
+        scanner.close();
 	}
 
 }

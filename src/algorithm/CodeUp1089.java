@@ -10,6 +10,7 @@ public class CodeUp1089 {
 		int diffrence = scanner.nextInt();
 		int number = scanner.nextInt();
 		System.out.println(initial + (number-1) * diffrence);
+		scanner.close();
 	}
 
 }

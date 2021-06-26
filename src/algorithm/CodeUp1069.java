@@ -24,6 +24,7 @@ public class CodeUp1069 {
 		default :
 			System.out.println("what?");
 		}
+		scanner.close();
 	}
 
 }

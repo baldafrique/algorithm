@@ -13,6 +13,7 @@ public class CodeUp1066 {
 			if(numbers[i] % 2 == 0) System.out.println("even");
 			else System.out.println("odd");
 		}
+		scanner.close();
 	}
 
 }

@@ -26,6 +26,7 @@ public class CodeUp1070 {
 		default :
 			System.out.println("fall");
 		}
+		scanner.close();
 	}
 
 }

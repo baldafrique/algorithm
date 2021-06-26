@@ -12,6 +12,7 @@ public class CodeUp1064 {
 		
 		int minimum = (number1 < number2 ? number1 : number2) < number3 ? (number1 < number2 ? number1 : number2) : number3;
 		System.out.println(minimum);
+		scanner.close();
 	}
 
 }

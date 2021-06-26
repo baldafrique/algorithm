@@ -8,6 +8,7 @@ public class CodeUp1029 {
 		Scanner scanner = new Scanner(System.in);
         double input = scanner.nextDouble();
         System.out.println(String.format("%.11f", input));
+        scanner.close();
 	}
 
 }

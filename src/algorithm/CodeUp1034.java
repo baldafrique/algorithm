@@ -9,7 +9,7 @@ public class CodeUp1034 {
         String input = scanner.next();
         int octal = Integer.parseInt(input, 8);
         System.out.println(octal);
-        
+        scanner.close();   
 	}
 
 }

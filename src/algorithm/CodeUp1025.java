@@ -17,6 +17,7 @@ public class CodeUp1025 {
 			System.out.println("[" + numbers[i]/decline + "]");
 			decline *= 10;
 		}
+		scanner.close();
 	}
 
 }

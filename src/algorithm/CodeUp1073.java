@@ -11,7 +11,7 @@ public class CodeUp1073 {
 			System.out.println(input);
 			input = scanner.nextInt();
 		}
-		
+		scanner.close();
 	}
 
 }

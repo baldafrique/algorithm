@@ -12,6 +12,7 @@ public class CodeUp1078 {
 			if(i % 2 == 0) sum += i;
 		}
 		System.out.println(sum);
+		scanner.close();
 	}
 
 }

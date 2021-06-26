@@ -11,6 +11,7 @@ public class CodeUp1041 {
 		int number = (int)data+1;
 		data = (char)number;
 		System.out.println(data);
+		scanner.close();
 	}
 
 }

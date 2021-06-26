@@ -11,6 +11,7 @@ public class CodeUp1090 {
 		int number = scanner.nextInt();
 		long result = initial * (long)Math.pow(ratio, number-1);
 		System.out.println(result);
+		scanner.close();
 	}
 
 }

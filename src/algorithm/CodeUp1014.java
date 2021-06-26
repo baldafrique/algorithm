@@ -9,6 +9,7 @@ public class CodeUp1014 {
 		String input1 = scanner.next();
 		String input2 = scanner.next();
 		System.out.println(input2 + " " + input1);
+		scanner.close();
 	}
 
 }

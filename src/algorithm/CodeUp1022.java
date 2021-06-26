@@ -8,6 +8,7 @@ public class CodeUp1022 {
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		System.out.println(input);
+		scanner.close();
 	}
 
 }

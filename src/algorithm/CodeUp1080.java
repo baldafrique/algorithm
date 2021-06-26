@@ -14,7 +14,7 @@ public class CodeUp1080 {
 			answer = i;
 		}
 		System.out.println(answer);
-		
+		scanner.close();
 	}
 
 }

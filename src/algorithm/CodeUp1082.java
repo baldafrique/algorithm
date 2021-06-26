@@ -11,7 +11,7 @@ public class CodeUp1082 {
 		for(int i=1; i<16; i++) {
 			System.out.printf("%X*%X=%X\n", hex, i, hex * i);
 		}
-		
+		scanner.close();
 	}
 
 }

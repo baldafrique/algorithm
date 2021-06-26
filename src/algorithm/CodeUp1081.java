@@ -14,7 +14,7 @@ public class CodeUp1081 {
 				System.out.println(i + " " + j);
 			}
 		}
-		
+		scanner.close();
 	}
 
 }

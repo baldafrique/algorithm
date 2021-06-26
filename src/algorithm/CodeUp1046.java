@@ -14,6 +14,7 @@ public class CodeUp1046 {
 		
 		System.out.println(sum);
 		System.out.printf("%.1f", average);
+		scanner.close();
 	}
 
 }

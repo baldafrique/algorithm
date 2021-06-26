@@ -9,6 +9,7 @@ public class CodeUp1033 {
         int input = scanner.nextInt();
         String temp = Integer.toHexString(input);
         System.out.println(temp.toUpperCase());
+        scanner.close();
 	}
 
 }

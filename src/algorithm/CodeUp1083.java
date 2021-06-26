@@ -11,6 +11,7 @@ public class CodeUp1083 {
 			if(i%3 != 0) System.out.print(i +" ");
 			else System.out.print("X ");
 		}
+		scanner.close();
 	}
 
 }

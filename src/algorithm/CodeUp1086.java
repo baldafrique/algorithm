@@ -12,6 +12,7 @@ public class CodeUp1086 {
 		long sum = width * height * bit;
 		double megabyte = sum / (8 * 1024 * 1024 * 1.0);
 		System.out.printf("%.2f MB", megabyte);
+		scanner.close();
 	}
 
 }

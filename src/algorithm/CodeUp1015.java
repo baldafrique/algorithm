@@ -8,6 +8,7 @@ public class CodeUp1015 {
 		Scanner scanner = new Scanner(System.in);
 		float input = scanner.nextFloat();
 		System.out.println(String.format("%.2f", input));
+		scanner.close();
 	}
 
 }

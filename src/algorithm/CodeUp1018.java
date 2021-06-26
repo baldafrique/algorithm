@@ -13,6 +13,7 @@ public class CodeUp1018 {
 		int day = Integer.valueOf(array[2]);
 		
 		System.out.printf("%04d.%02d.%02d", year, month, day);
+		scanner.close();
 	}
 
 }

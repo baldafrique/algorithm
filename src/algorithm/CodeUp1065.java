@@ -12,6 +12,7 @@ public class CodeUp1065 {
 			numbers[i] = scanner.nextInt();
 			if(numbers[i] % 2 == 0) System.out.println(numbers[i]);
 		}
+		scanner.close();
 	}
 
 }

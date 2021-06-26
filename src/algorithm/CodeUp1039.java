@@ -9,6 +9,7 @@ public class CodeUp1039 {
 		long number1 = scanner.nextLong();
 		long number2 = scanner.nextLong();
 		System.out.println(number1 + number2);
+		scanner.close();
 	}
 
 }

@@ -10,6 +10,7 @@ public class CodeUp1088 {
 		for(int i=1; i<=input; i++) {
 			if(i%3 != 0) System.out.print(i + " ");
 		}
+		scanner.close();
 	}
 
 }

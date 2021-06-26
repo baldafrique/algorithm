@@ -20,6 +20,7 @@ public class CodeUp1084 {
 			}
 		}
 		System.out.println(count);
+		scanner.close();
 	}
 
 }

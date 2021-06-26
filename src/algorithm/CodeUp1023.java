@@ -10,6 +10,7 @@ public class CodeUp1023 {
 		String[] array = input.split("\\.");
 		System.out.println(array[0]);
 		System.out.println(array[1]);
+		scanner.close();
 	}
 
 }

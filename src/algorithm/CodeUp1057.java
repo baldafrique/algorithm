@@ -10,6 +10,7 @@ public class CodeUp1057 {
 		int input2 = scanner.nextInt();
 		if (input1 == input2) System.out.println(1);
 		else System.out.println(0);
+		scanner.close();
 	}
 
 }

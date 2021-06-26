@@ -9,6 +9,7 @@ public class CodeUp1062 {
 		int number1 = scanner.nextInt();
 		int number2 = scanner.nextInt();
 		System.out.printf("%d", number1 > number2 ? number1 : number2);
+		scanner.close();
 	}
 
 }

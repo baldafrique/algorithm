@@ -10,7 +10,7 @@ public class CodeUp1077 {
 		for(int i=0; i<=input; i++) {
 			System.out.println(i);
 		}
-		
+		scanner.close();
 	}
 
 }
