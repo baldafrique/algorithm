@@ -1,0 +1,43 @@
+package algorithm;
+
+import java.util.Scanner;
+
+public class CodeUp1620 {
+    public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+    int input = scanner.nextInt();
+    int answer = sum(input);
+    System.out.println(answer);
+    scanner.close();
+    }
+    
+    public static int sum(int input) {
+    	if(input/10 != 0) {
+    		int digit = 0;
+            int quotient = 1;
+            
+            while(input/quotient != 0) {
+            	digit++;
+            	quotient *= 10;
+            }
+            
+            quotient = 10;
+            
+            int[] num = new int[digit];
+            for(int i=digit-1; i>=0; i--) {
+            	num[i] = input % quotient;    	
+            	input /= quotient;
+            }
+            
+            input = 0;
+            
+            for(int i=0; i<digit; i++) {
+            	input += num[i];
+            }
+        	return sum(input);	
+    	}
+    	else return input;
+    	
+    }
+}
+
