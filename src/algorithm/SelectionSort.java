@@ -8,8 +8,8 @@ public class SelectionSort {
 		int[] n = {2, 4, 5, 3, 1};
 		int tmp;
 		
-		for (int i=0; i<n.length-1; i++) { // i : ÃÖ¼Ò°ªÀ» À§Ä¡½ÃÅ³ °¡Àå ¾ÕÀÇ index
-			for (int j=i+1; j<5; j++) { // j : ¸Ç ¾ÕÀÇ index(i)¿Í ºñ±³ÇÒ index
+		for (int i=0; i<n.length-1; i++) { // i : ï¿½Ö¼Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ index
+			for (int j=i+1; j<5; j++) { // j : ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ index(i)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ index
 				if (n[i] > n[j]) {
 					tmp = n[i];
 					n[i] = n[j];

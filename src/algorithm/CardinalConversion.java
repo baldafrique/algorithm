@@ -21,6 +21,8 @@ public class CardinalConversion {
 		for (int i=digits-1; i>=0; i--) {
 			System.out.print(output[i]);
 		}
+		
+		scanner.close();
 	}
 	
 }
