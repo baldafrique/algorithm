@@ -6,16 +6,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main {
+public class BaekJoon10996 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		String[] names = reader.readLine().split("-");
+		int num = Integer.parseInt(reader.readLine());
 		
-		for (int i = 0; i < names.length; i++) {
-			writer.write(names[i].charAt(0));
+		for (int i = 1; i <= num * 2; i++) {
+			for (int j = 1; j <= num; j++) {
+				writer.write((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0) ? "*" : " ");
+			}
+			writer.write("\n");
 		}
 		
 		writer.flush();
