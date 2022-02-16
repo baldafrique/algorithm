@@ -6,23 +6,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main {
+public class BaekJoon1436 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		String str = reader.readLine();
-		int[] cnt = new int[26];
-		
-		for (int i = 0; i < str.length(); i++) {
-			cnt[str.charAt(i) - 'a']++;
+		int num = Integer.parseInt(reader.readLine());
+		int count = 0;
+		int value = 0;
+		for (int i = 666; count < num; i++) {
+			if (Integer.toString(i).contains("666")) {
+				value = i;
+				count++;
+			}
 		}
+		writer.write(Integer.toString(value));
 		
-		for (int i : cnt) {
-			writer.write(i + " ");
-		}
-				
 		writer.flush();
 		reader.close();
 		writer.close();

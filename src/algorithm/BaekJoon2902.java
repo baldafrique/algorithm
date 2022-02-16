@@ -6,23 +6,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main {
+public class BaekJoon2902 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
+		String[] names = reader.readLine().split("-");
 		
-		String str = reader.readLine();
-		int[] cnt = new int[26];
-		
-		for (int i = 0; i < str.length(); i++) {
-			cnt[str.charAt(i) - 'a']++;
+		for (int i = 0; i < names.length; i++) {
+			writer.write(names[i].charAt(0));
 		}
 		
-		for (int i : cnt) {
-			writer.write(i + " ");
-		}
-				
 		writer.flush();
 		reader.close();
 		writer.close();

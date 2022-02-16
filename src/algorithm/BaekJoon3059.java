@@ -5,24 +5,33 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.HashSet;
+import java.util.Set;
 
-public class Main {
+public class BaekJoon3059 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		String str = reader.readLine();
-		int[] cnt = new int[26];
+		int num = Integer.parseInt(reader.readLine());
+		String str;
+		int sum;
+		Set<Character> set = new HashSet<>();
 		
-		for (int i = 0; i < str.length(); i++) {
-			cnt[str.charAt(i) - 'a']++;
+		for (int i = 0; i < num; i++) {
+			sum = 2015;
+			str = reader.readLine();
+			for (int j = 0; j < str.length(); j++) {
+				if (!set.contains(str.charAt(j))) {
+					set.add(str.charAt(j));
+					sum -= str.charAt(j);
+				}
+			}
+			writer.write(sum + "\n");
+			set = new HashSet<>();
 		}
 		
-		for (int i : cnt) {
-			writer.write(i + " ");
-		}
-				
 		writer.flush();
 		reader.close();
 		writer.close();
