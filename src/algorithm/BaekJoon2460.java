@@ -6,17 +6,25 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main {
+public class BaekJoon2460 {
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		String[] str = reader.readLine().split(" ");
-		long[] num = new long[2];
-		num[0] = Long.parseLong(str[0]);
-		num[1] = Long.parseLong(str[1]);
-		writer.write(Long.toString(Math.abs(num[0] - num[1])));
+		int peopleNum = 0;
+		int peopleMax = 0;
+		String[] str;
+		
+		for (int i = 0; i < 10; i++) {
+			str = reader.readLine().split(" ");
+			peopleNum -= Integer.parseInt(str[0]);
+			peopleNum += Integer.parseInt(str[1]);
+			if (peopleNum > peopleMax) {
+				peopleMax = peopleNum;
+			}
+		}
+		writer.write(Integer.toString(peopleMax));
 		
 		writer.flush();
 		reader.close();
