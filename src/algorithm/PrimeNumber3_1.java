@@ -1,6 +1,6 @@
 package algorithm;
 
-public class PrimeNumber3 {
+public class PrimeNumber3_1 {
 
 	public static void main(String[] args) {
 		//	n이 소수라면 n의 제곱근 이하의 어떤 소수로도 나누어떨어지지 않는다는 사실을 통해 알고리즘 개선

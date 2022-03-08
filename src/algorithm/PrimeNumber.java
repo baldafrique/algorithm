@@ -3,7 +3,7 @@ package algorithm;
 public class PrimeNumber {
 
 	public static void main(String[] args) {
-		int input = 10;
+		int input = 1000;
 		int counter = 0; // 연산 횟수
 //		boolean primeNumberCheck = true;
 		
@@ -20,7 +20,7 @@ public class PrimeNumber {
 				System.out.println(i);
 			}
 		}
-		System.out.println(counter);
+		System.out.println(counter); // 78022
 		
 		// 두번째 방법
 //		for(int i=2; i<=input; i++) {

@@ -1,6 +1,6 @@
 package algorithm;
 
-public class PrimeNumber2 {
+public class PrimeNumber2_1 {
 
 	public static void main(String[] args) {
 		// 정수 n이 소수라면 2~n-1까지의 어떤 소수로도 나누어 떨어지지 않는다는 사실을 통해 알고리즘 성능 개선
