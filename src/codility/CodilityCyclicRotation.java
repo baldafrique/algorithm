@@ -21,6 +21,7 @@ public class CodilityCyclicRotation {
  		if (A.length == 0) {
  			A = new int[0];
  		}
+ 		
  		else { 	
  			Deque<Integer> deque = new ArrayDeque<Integer>();
  			for (int i : A) {
