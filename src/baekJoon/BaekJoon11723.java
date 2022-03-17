@@ -15,7 +15,7 @@ public class BaekJoon11723 {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 		int num = Integer.parseInt(reader.readLine());
-		Set<String> s = new HashSet();
+		Set<String> s = new HashSet<>();
 		String[] line;
 		for (int i = 0; i < num; i++) {
 			line = reader.readLine().split(" ");
