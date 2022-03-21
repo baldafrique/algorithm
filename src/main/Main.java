@@ -13,7 +13,7 @@ public class Main {
  		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
  		
  		
- 		
+
  		writer.flush();
 		reader.close();
 		writer.close();
