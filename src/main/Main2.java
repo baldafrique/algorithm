@@ -6,9 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
-import java.util.Stack;
 
-public class Main {
+public class Main2 {
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -23,35 +22,18 @@ public class Main {
  		}
  		
  		Arrays.sort(arr);
+ 		
  		num = Integer.parseInt(reader.readLine());
  		str = reader.readLine().split(" ");
  		
  		//
- 		int front, end, mid, val;
- 		
- 		Loop:
  		for (int i = 0; i < num; i++) {
- 			val = Integer.parseInt(str[i]);
- 			
- 			front = 0;
- 			end = arr.length - 1;
- 			mid = (front + end) / 2;
- 			
- 			while (front <= end) {
- 				if (arr[mid] > val) {
- 					end = mid - 1;
- 					mid = (front + end) / 2;
- 				}
- 				else if (arr[mid] < val) {
- 					front = mid + 1;
- 					mid = (front + end) / 2;
- 				}
- 				else {
- 					writer.write("1\n");
- 					continue Loop;
- 				}
+ 			if (Arrays.binarySearch(arr, Integer.parseInt(str[i])) >= 0) {
+ 				writer.write("1\n"); 				
  			}
- 			writer.write("0\n");
+ 			else {
+ 				writer.write("0\n");
+ 			}
  		}
  		//
  		
