@@ -5,26 +5,20 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main {
+public class BaekJoon3034 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		String s = reader.readLine();
+		String str = reader.readLine();
+		int num = Integer.parseInt(str.split(" ")[0]);
+		int width = Integer.parseInt(str.split(" ")[1]);
+		int height = Integer.parseInt(str.split(" ")[2]);
+		double diagonal = Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2));
 		
-		int X = Integer.parseInt(s.split(" ")[0]);
-		int L = Integer.parseInt(s.split(" ")[1]);
-		int R = Integer.parseInt(s.split(" ")[2]);
-		
-		if (X <= L) {
-			writer.write(Integer.toString(L));
-		}
-		else if (X >= R) {
-			writer.write(Integer.toString(R));	
-		}
-		else {
-			writer.write(Integer.toString(X));	
+		for (int i = 0; i < num; i++) {
+			writer.write((Integer.parseInt(reader.readLine()) <= diagonal ? "DA" : "NE") + "\n");
 		}
 		
 		writer.flush();
