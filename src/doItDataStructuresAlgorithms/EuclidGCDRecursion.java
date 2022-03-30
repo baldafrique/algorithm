@@ -2,7 +2,7 @@ package doItDataStructuresAlgorithms;
 
 import java.util.Scanner;
 
-public class EuclidGCD {
+public class EuclidGCDRecursion {
 	
 	private static int gcd(int x, int y) {
 		if (y == 0) {

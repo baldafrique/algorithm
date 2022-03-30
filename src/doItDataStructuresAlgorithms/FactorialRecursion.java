@@ -2,7 +2,7 @@ package doItDataStructuresAlgorithms;
 
 import java.util.Scanner;
 
-public class Factorial {
+public class FactorialRecursion {
 	
 	// 양의 정수 n의 팩토리얼 반환
 	private static int factorial(int n) {
