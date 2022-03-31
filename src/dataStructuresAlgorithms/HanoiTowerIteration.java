@@ -32,7 +32,7 @@ public class HanoiTowerIteration {
 				System.out.println("Plate " + temp.n + " : " + temp.from + " → " + temp.to);
 			}
 			else { // type이 SUBTOWER인 경우
-				int k = 3 - temp.from - temp.to;
+				int k = 3 - (temp.from + temp.to);
 				stack.push(new Record(Rtype.SUBTOWER, temp.n - 1, k, temp.to));
 				stack.push(new Record(Rtype.PLATE, temp.n, temp.from, temp.to));
 				stack.push(new Record(Rtype.SUBTOWER, temp.n - 1, temp.from, k));			
@@ -42,9 +42,8 @@ public class HanoiTowerIteration {
 	}
 
 	public static void main(String[] args) {
-		
 		HanoiTowerIteration myT = new HanoiTowerIteration();
-		
+
 		myT.move(4, 0, 1);
 	}
 
