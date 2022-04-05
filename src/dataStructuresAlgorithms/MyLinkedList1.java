@@ -19,19 +19,30 @@ public class MyLinkedList1 {
 		size = 0;
 	}
 	
-	public int add(int data) {
-		return addFirst(data);
+	public void set() {
+		
 	}
 	
-	public int addFirst(int data) {
+	public int get() {
+		return -1;
+	}
+	
+	public void addFirst(int data) {
 		Node newNode = new Node(data);
 		newNode.next = listPointer;
 		listPointer = newNode;
 		size++;
-		return 0;
 	}
 	
-	public int remove(int data) {
+	public void addLast(int data) {
+		
+	}
+	
+	public void add(int data) {
+		
+	}
+	
+	public int removeData(int data) {
 		int index = 0;
 		if (listPointer == null) {
 			return -1;
@@ -53,6 +64,22 @@ public class MyLinkedList1 {
 				q = q.next;
 			}
 		}
+		return -1;
+	}
+	
+	public void removeFirst() {
+		
+	}
+	
+	public void removeLast() {
+		
+	}
+	
+	public void remove(int index) {
+		
+	}
+	
+	public int indexOf(int data) {
 		return -1;
 	}
 	
