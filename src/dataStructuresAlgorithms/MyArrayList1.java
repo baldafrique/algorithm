@@ -13,15 +13,21 @@ public class MyArrayList1 {
 		size = 0;
 	}
 	
-	public String get(int index) {
-		return null;
+	public int get(int index) {
+		return elementData[index];
 	}
 	
-	public int search(int data) {
-		return 0;
+	public int indexOf(int data) {
+		for (int i = 0; i < size; i++) {
+			if (elementData[i] == data) {
+				return i;
+			}
+		}
+		return -1;
 	}
-	
-	public void add(int data) {
+
+	public int add(int data) {
+		// grow
 		if (size == currCapacity) {
 			currCapacity *= 2;
 			int[] newArray = new int[currCapacity];
@@ -30,17 +36,25 @@ public class MyArrayList1 {
 			}
 			elementData = newArray;
 		}
-		else {
-			elementData[size++] = data;
-		}
+		
+		elementData[size++] = data;
+		return size - 1;
 	}
 	
 	public void add(int index, int data) {
+		// 용량이 부족하면 grow
+
+		// index ~ size는 하나씩 뒤로 copy
 		
+		// index에 data 기록
 	}
 	
-	public String remove(int index) {
-		return null;
+	public int remove(int index) {
+		int retValue = elementData[index]; // return value
+		for (int i = index; i < size - 1; i++) {
+			elementData[i] = elementData[i + 1];
+		}
+		return retValue;
 	}
 	
 	public int sizeOf() {
@@ -58,5 +72,4 @@ public class MyArrayList1 {
 		}
 		return ret;
 	}
-	
 }
