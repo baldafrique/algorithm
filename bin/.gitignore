@@ -1,9 +1,8 @@
-/codeUp/
-/codility/
-/dataStructuresAlgorithms/
-/doItDataStructuresAlgorithms/
-/programmers/
-/BaekJoon15025.class
+/.DS_Store
+/baekJoon/
+/BaekJoon1074.class
+/BaekJoon1181.class
+/BaekJoon12605.class
 /BaekJoon15080$ETime.class
 /BaekJoon15080.class
 /BaekJoon15474.class
@@ -13,12 +12,12 @@
 /BaekJoon24072.class
 /BaekJoon24075.class
 /BaekJoon24079.class
+/BaekJoon2630.class
+/BaekJoon2954.class
 /BaekJoon6763.class
 /BaekJoon8710.class
-/baekJoon/
-/BaekJoon9325.class
-/BaekJoon2954.class
 /Main.class
+<<<<<<< HEAD
 /BaekJoon12605.class
 /BaekJoon9046.class
 /BaekJoon1855.class
@@ -26,3 +25,10 @@
 /BaekJoon24266.class
 /BaekJoon2754.class
 /BaekJoon5598.class
+=======
+/codeUp/
+/codility/
+/dataStructuresAlgorithms/
+/doItDataStructuresAlgorithms/
+/programmers/
+>>>>>>> 6436efbace0465866ba5e5bc153f704464fab367
