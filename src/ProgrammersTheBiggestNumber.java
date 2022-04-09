@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main {
+public class ProgrammersTheBiggestNumber {
 	static void swap(String[] a, int idx1, int idx2) {
 		String t = a[idx1];
 		a[idx1] = a[idx2];
