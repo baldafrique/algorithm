@@ -9,15 +9,8 @@ public class Main {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		int length = Integer.parseInt(reader.readLine());
-		String name = reader.readLine();
-		int score = 0;
 		
-		for (int i = 0; i < length; i++) {
-			score += name.charAt(i) - 'A' + 1;
-		}
-
-		writer.write(Integer.toString(score));
+		
 		writer.flush();
 		reader.close();
 		writer.close();
