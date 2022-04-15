@@ -1,5 +1,3 @@
-package baekJoon;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -14,6 +12,7 @@ public class BaekJoon2108 { // unsolved
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 		
+		@SuppressWarnings("unused")
 		int median, mode, range; // 중앙값, 최빈값, 범위
 		float mean = 0; // 평균
 		int num = Integer.parseInt(reader.readLine());

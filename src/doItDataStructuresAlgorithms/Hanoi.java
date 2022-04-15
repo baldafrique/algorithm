@@ -3,7 +3,7 @@ package doItDataStructuresAlgorithms;
 import java.util.Scanner;
 
 public class Hanoi {
-	private static Character[] col = {'A', 'B', 'C'};
+//	private static Character[] col = {'A', 'B', 'C'};
 	
 	private static void move(int n, int x, int y) {
 		if (n > 1) {

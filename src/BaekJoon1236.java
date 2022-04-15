@@ -1,7 +1,5 @@
 // Unsolved
 
-package baekJoon;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -16,6 +14,7 @@ public class BaekJoon1236 {
 
 		String[] str1 = reader.readLine().split(" ");
 		String str2;
+		@SuppressWarnings("unused")
 		int cnt = 0;
 		int row = Integer.parseInt(str1[0]);
 		int col = Integer.parseInt(str1[1]);

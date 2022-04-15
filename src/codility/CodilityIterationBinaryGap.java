@@ -12,6 +12,7 @@ public class CodilityIterationBinaryGap {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 		String[] arr = Integer.toBinaryString(Integer.parseInt(reader.readLine())).split("");
+		@SuppressWarnings("unused")
 		boolean flag = false;
 		int max = 0;
 		int cnt = 0;

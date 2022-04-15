@@ -54,6 +54,8 @@ public class BaekJoon9046 {
 				}
 			}
 			
+			writer.write(codeStr);
+			
 			Iterator<Character> keys = count.keySet().iterator();
 			String ret = null;
 			while (keys.hasNext()) {
