@@ -1,15 +1,13 @@
 package dataStructuresAlgorithms;
 
-
 import java.util.Arrays;
 
-public class MyArrayList2 {
-	int initialCapacity = 10;
+public class MyArrayList3 {
 	int capacity;
 	MyData[] myArray;
 	int size;
 	
-	public MyArrayList2() {
+	public MyArrayList3(int initialCapacity) {
 		capacity = initialCapacity;
 		myArray = new MyData[capacity];
 		size = 0;
@@ -41,6 +39,14 @@ public class MyArrayList2 {
 		myArray[index] = data;
 	}
 	
+	public void addFirst(MyData data) {
+		add(0, data);
+	}
+	
+	public void addLast(MyData data) {
+		add(data);
+	}
+	
 	public void add(MyData data) { // save data at the end of array
 		if (size == capacity) {
 			grow(capacity);
@@ -51,13 +57,6 @@ public class MyArrayList2 {
 	
 	private void grow(int increment) {
 		capacity += increment;
-		
-//		MyData[] newArray = new MyData[capacity];
-//		for (int i = 0; i < size; i++) {
-//			newArray[i] = myArray[i];
-//		}
-//		myArray = newArray;
-		
 		myArray = Arrays.copyOf(myArray, capacity);
 	}
 
@@ -76,6 +75,14 @@ public class MyArrayList2 {
 		for (int i = size - 1; i >= index; i--) {
 			myArray[i+1] = myArray[i];
 		}
+	}
+	
+	public MyData removeFirst() {
+		return remove(0);
+	}
+	
+	public MyData removeLast() {
+		return remove(size - 1);
 	}
 
 	public MyData remove(int index) {
@@ -104,6 +111,10 @@ public class MyArrayList2 {
 	
 	public int sizeOf() {
 		return size;
+	}
+	
+	public int capacity() {
+		return capacity;
 	}
 	
 	public void sort() {

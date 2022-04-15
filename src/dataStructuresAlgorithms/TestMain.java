@@ -4,7 +4,7 @@ package dataStructuresAlgorithms;
 public class TestMain {
 
 	public static void main(String[] args) {
-		MyArrayList2 al = new MyArrayList2();
+		MyArrayList3 al = new MyArrayList3(10);
 		
 		al.add(new MyData("xyz", 10));
 		al.add(new MyData("abc", 10));
@@ -26,7 +26,7 @@ public class TestMain {
 		al.sort();
 		System.out.println(al.toString());
 		
-		MyLinkedList2 ll = new MyLinkedList2();
+		MyLinkedList3 ll = new MyLinkedList3();
 		
 		ll.add(new MyData("xyz", 10));
 		ll.add(new MyData("abc", 10));

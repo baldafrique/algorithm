@@ -1,10 +1,10 @@
 package dataStructuresAlgorithms;
 
-public class MyLinkedList2 {
+public class MyLinkedList3 {
 	NodeDL head, tail;
 	int size;
 	
-	public MyLinkedList2() {
+	public MyLinkedList3() {
 		head = null;
 		tail = null;
 		size = 0;
@@ -71,6 +71,28 @@ public class MyLinkedList2 {
 	
 	private boolean checkIndexValidation(int index) {
 		return index >= 0 && index < size ? true : false;
+	}
+	
+	public MyData removeFirst() {
+		if (head != null) {
+			MyData ret = head.data;
+			removeANode(head);
+			return ret;
+		}
+		else {
+			return null;
+		}
+	}
+	
+	public MyData removeLast() {
+		if (tail != null) {
+			MyData ret = tail.data;
+			removeANode(tail);
+			return ret;
+		}
+		else {
+			return null;
+		}
 	}
 	
 	public MyData remove(int index) {
@@ -175,7 +197,7 @@ public class MyLinkedList2 {
 	}
 	
 	public void sort() {
-		MyLinkedList2 tempList = new MyLinkedList2();
+		MyLinkedList3 tempList = new MyLinkedList3();
 		NodeDL temp = head;
 		while (temp != null) {
 			tempList.addInOrder(temp.data);
