@@ -8,39 +8,44 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-public class BaekJoon2886B {
+public class BaekJoon2866A {
+	public static int R, C, count;
+	public static char[][] table;
+	
+	public static boolean isDuplicate() {
+		Set<String> set = new HashSet<>();
+		for (int i = 0; i < C; i++) {
+			String tmp = "";
+			for (int j = count + 1; j < R; j++) {
+				tmp += table[j][i];
+			}
+			if (set.contains(tmp)) {
+				return true;
+			}
+			else {
+				set.add(tmp);
+			}
+		}
+		return false;
+	}
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
+
 		StringTokenizer s = new StringTokenizer(reader.readLine());
-		int R = Integer.parseInt(s.nextToken());
-		int C = Integer.parseInt(s.nextToken());
-		char[][] table = new char[R][C];
-		String[] arr = new String[C];
-		int count = 0;
+		R = Integer.parseInt(s.nextToken());
+		C = Integer.parseInt(s.nextToken());
+		table = new char[R][C];
+		count = 0;
 		
 		for (int i = 0; i < R; i++) {
 			table[i] = reader.readLine().toCharArray();
 		}
 		
-		for (int i = 0; i < C; i++) {
-			arr[i] = "";
-			for (int j = 1; j < R; j++) {
-				arr[i] += table[j][i];
-			}
-		}
-		
-		outerloop:
-		for (int i = 0; i < R; i++) {
-			Set<String> set = new HashSet<>();
-			for (int j = 0; j < C; j++) {
-				String tmp = arr[j].substring(i);
-				if (set.contains(tmp)) {
-					break outerloop;
-				}
-				else {
-					set.add(tmp);
-				}
+		while (count < R) {
+			if (isDuplicate()) {
+				break;
 			}
 			count++;
 		}
