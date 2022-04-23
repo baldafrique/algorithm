@@ -1,4 +1,4 @@
-package midTermEx;
+package dataStructuresAlgorithms;
 
 public class MidtermMazeWall {
 	int [][] maze;

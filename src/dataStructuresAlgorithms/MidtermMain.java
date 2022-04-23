@@ -1,5 +1,4 @@
-package midTermEx;
-// 1�� ������ main
+package dataStructuresAlgorithms;
 
 public class MidtermMain {
 

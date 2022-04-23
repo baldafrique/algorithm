@@ -1,4 +1,4 @@
-package midTermEx;
+package dataStructuresAlgorithms;
 
 public class MidtermMyLinkedList3Recursion {
 

@@ -1,4 +1,4 @@
-package midTermEx;
+package dataStructuresAlgorithms;
 
 /*
  Solution 
