@@ -1,5 +1,3 @@
-
-
 import java.util.Arrays;
 
 public class CodilityTriangle {
@@ -20,5 +18,4 @@ public class CodilityTriangle {
 
 	     return 0;
 	 }
-
 }
