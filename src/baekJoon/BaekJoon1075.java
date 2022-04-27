@@ -13,6 +13,7 @@ public class BaekJoon1075 {
 		String number = reader.readLine();
 		String minimumNumber = number.substring(0, number.length() - 2) + "00";
 		int start = Integer.parseInt(minimumNumber); 
+		@SuppressWarnings("unused")
 		int N = Integer.parseInt(number);
 		int F = Integer.parseInt(reader.readLine());
 		
