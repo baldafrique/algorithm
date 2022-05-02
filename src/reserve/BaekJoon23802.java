@@ -5,33 +5,27 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class BaekJoon17362 {
+public class BaekJoon23802 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-		boolean isASC = true;
-		int n = Integer.parseInt(reader.readLine());
-		int m = 0;
-		
-		for (int i = 1; i <= n; i++) {
-			if (isASC) {
-				m++;
-				if (m == 5) {
-					isASC = false;
-				}
+		int N = Integer.parseInt(reader.readLine());
+
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < 5 * N; j++) {
+				writer.write("@");
 			}
-			else {
-				m--;
-				if (m == 1) {
-					isASC = true;
-				}
-			}
+			writer.write("\n");
 		}
 		
-		writer.write(Integer.toString(m));
-		writer.flush();
+		for (int i = 0; i < 4 * N; i++) {
+			for (int j = 0; j < N; j++) {
+				writer.write("@");
+			}
+			writer.write("\n");
+		}
+		
 		reader.close();
 		writer.close();
 	}
-
 }
