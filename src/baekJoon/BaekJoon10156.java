@@ -1,3 +1,4 @@
+package baekJoon;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -16,7 +17,6 @@ public class BaekJoon10156 {
 		int difference = K * N - M;
 		
 		writer.write(difference > 0 ? Integer.toString(difference) : "0");
-		
 		writer.flush();
 		reader.close();
 		writer.close();
