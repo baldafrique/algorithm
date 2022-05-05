@@ -6,21 +6,17 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class BaekJoon23530 {
+public class BaekJoon15726 {
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-		int t = Integer.parseInt(reader.readLine());
-		StringTokenizer stringTokenizer;
-		
-		for (int i = 0; i < t; i++) {
-			stringTokenizer = new StringTokenizer(reader.readLine());
-			int a = Integer.parseInt(stringTokenizer.nextToken());
-			@SuppressWarnings("unused")
-			int b = Integer.parseInt(stringTokenizer.nextToken());
-			writer.write(a + "\n");
-		}
-		
+		StringTokenizer stringTokenizer = new StringTokenizer(reader.readLine());
+		int A = Integer.parseInt(stringTokenizer.nextToken()); 
+		double B = Double.parseDouble(stringTokenizer.nextToken());
+		double C = Double.parseDouble(stringTokenizer.nextToken());
+
+		writer.write(Integer.toString((int) (B > C ? A * B / C : A / B * C)));
 		reader.close();
 		writer.close();
 	}

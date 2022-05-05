@@ -68,7 +68,6 @@ public class MidtermPriorityQueue {
 		// ==> pccc(5) ddd(3) paaa(1) aaa(1) bbb(2) ccc(5) pddd(3) pbbb(2) 	
 	}
 	
-	
 	public class MyData{
 		int priority;
 		String name;

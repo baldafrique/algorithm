@@ -14,11 +14,35 @@ public class MyArrayList3 {
 	}
 	
 	public int indexOf(MyData data) {
+		/* original indexOf()
 		for (int i = 0; i < size; i++) {
 			if (myArray[i].equals(data)) {
 				return i;
 			}
 		}
+		return -1;
+		*/
+		
+		return binarySearch(data, 0, sizeOf() - 1);
+	}
+	
+	private int binarySearch(MyData data, int low, int high) {
+		int mid;
+		
+		if (low <= high) {
+			mid = (low + high) / 2;
+			
+			if (data.equals(get(mid))) {
+				return mid;
+			}
+			else if (data.compareTo(get(mid)) > 0) {
+				return binarySearch(data, low, mid - 1);
+			}
+			else {
+				return binarySearch(data, mid + 1, high);
+			}
+		}
+		
 		return -1;
 	}
 	
@@ -119,6 +143,7 @@ public class MyArrayList3 {
 	
 	public void sort() {
 		// selection sort from biggest to smaller..
+		/* original sort() 
 		for (int i = 0; i < size - 1; i++) {
 			for (int j = i + 1; j < size; j++) {
 				if (myArray[i].compareTo(myArray[j]) < 0) {
@@ -126,6 +151,45 @@ public class MyArrayList3 {
 				}
 			}
 		}
+		*/
+		
+		quickSort(0, sizeOf() - 1);
+	}
+	
+	private void quickSort(int left, int right) {
+		if (left < right) {
+			int newPivot = partition(left, right);
+			quickSort(left, newPivot - 1);
+			quickSort(newPivot + 1, right);
+		}
+	}
+	
+	private int partition(int left, int right) {
+		int pivot = (left + right) / 2;
+		
+		while (left < right) {
+			
+			while (left <= right && get(left).compareTo(get(pivot)) >= 0) {
+				++left;
+			}
+			
+			while (left <= right && get(right).compareTo(get(pivot)) < 0) {
+				--right;
+			}
+			
+			if (left <= right) {
+				swap(left, right);
+				
+				if (right == pivot) {
+					return left;
+				}
+			}
+		}
+		
+		if (right != pivot) {
+			swap(right, pivot);
+		}
+		return right;
 	}
 	
 	private void swap(int i, int j) {
@@ -140,5 +204,22 @@ public class MyArrayList3 {
 			ret += myArray[i] + " ";
 		}
 		return ret;
+	}
+	
+	public static void main(String[] args) {
+		MyArrayList3 al = new MyArrayList3(10);
+		
+		al.add(new MyData("xyz", 10));
+		al.add(new MyData("abc", 10));
+		al.add(new MyData("def", 20));
+		al.add(new MyData("ghi", 30));
+		al.add(new MyData("jkl", 40));
+		
+		System.out.println(al.toString());
+		al.sort();
+		System.out.println(al.toString());
+		System.out.println(al.indexOf(new MyData("def", 20)));
+		System.out.println(al.indexOf(new MyData("ghi", 30)));
+		System.out.println(al.indexOf(new MyData("xyz", 0)));
 	}
 }
