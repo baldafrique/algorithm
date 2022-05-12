@@ -1,4 +1,4 @@
-package reserve;
+package baekJoon;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -6,22 +6,20 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class BaekJoon14909 {
+public class BaekJoon13136 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-		String numbers = reader.readLine();
-		StringTokenizer stringTokenizer = new StringTokenizer(numbers);
-		int cnt = 0;
+		StringTokenizer stringTokenizer = new StringTokenizer(reader.readLine());
+		long R = Long.parseLong(stringTokenizer.nextToken());
+		long C = Long.parseLong(stringTokenizer.nextToken());
+		long N = Long.parseLong(stringTokenizer.nextToken());
+		long quotient;
 		
-		while (stringTokenizer.hasMoreTokens()) {
-			if (Integer.parseInt(stringTokenizer.nextToken()) > 0) {
-				cnt++;
-			}
-		}
+		quotient = (R % N == 0 ? R / N : R / N + 1);
+		quotient = quotient * (C % N == 0 ? C / N : C / N + 1);
 		
-		writer.write(Integer.toString(cnt));
-		writer.flush();
+		writer.write(Long.toString(quotient));
 		reader.close();
 		writer.close();
 	}
