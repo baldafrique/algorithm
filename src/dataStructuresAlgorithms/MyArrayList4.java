@@ -1,7 +1,6 @@
 package dataStructuresAlgorithms;
 
 import java.util.Arrays;
-import java.util.Stack;
 
 public class MyArrayList4 {
 
@@ -35,6 +34,7 @@ public class MyArrayList4 {
 
 	int capacity ;
 	MyData [] myArray ;
+	MyData [] sorted ;
 	int size;
 	
 	public MyArrayList4(int initialCapacity) {
@@ -159,39 +159,11 @@ public class MyArrayList4 {
 
 	public void quickSort(int p, int r) {
 		count++;
-		/*
 		if (p>=r)
 			return;
 		int q=partition(p,r);
 		quickSort(p,q-1);
 		quickSort(q+1,r);
-		*/
-		
-		quickSortIter();
-	}
-	
-	private void quickSortIter() {
-		Stack<Integer> stack = new Stack<>();
-	
-		stack.push(0);
-		stack.push(myArray.length);
-		
-		while (!stack.isEmpty()) {
-			int end = stack.pop();
-			int start = stack.pop();
-			
-			if (end - start < 2) {
-				continue;
-			}
-			
-			int p = start + ((end - start) / 2);
-			p = partition(start, end);
-			
-			stack.push(p + 1);
-			stack.push(end);
-			stack.push(start);
-			stack.push(p);
-		}
 	}
 	
 	private int partition(int p, int r) {
@@ -213,7 +185,89 @@ public class MyArrayList4 {
 		return right;
 	}
 
+	private void quickSortIter(int l, int h) {
+		int[] stack = new int[h - l + 1];
 		
+		int top = -1;
+		
+		stack[++top] = l;
+		stack[++top] = h;
+		
+		while (top >= 0) {
+			count++;
+			
+			h = stack[top--];
+			l = stack[top--];
+			
+			int p = partitionIter(l, h);
+			
+			if (p - 1 > l) {
+				stack[++top] = l;
+				stack[++top] = p - 1;
+			}
+			
+			if (p + 1 < h) {
+				stack[++top] = p + 1;
+				stack[++top] = h;
+			}
+		}
+	}
+	
+	private int partitionIter(int low, int high) {
+		MyData pivot = myArray[high];
+		
+		int i = low - 1;
+		
+		for (int j = low; j <= high - 1; j++) {
+			if (myArray[j].compareTo(pivot) <= 0) {
+				i++;
+				
+				swap(i, j);
+			}
+		}
+		
+		swap(i + 1, high);
+		return i + 1;
+	}
+	
+	private void mergeSort(int p, int r) {
+		if (p < r) {
+			count++;
+			
+			int q = (p + r) / 2;
+			mergeSort(p, q);
+			mergeSort(q + 1, r);
+			merge(p, q, r);
+		}
+	}
+	
+	private void merge(int p, int q, int r) {
+		int i = p;
+		int j = q + 1;
+		int k = p;
+		
+		while (i <= q && j <= r) {
+			if (myArray[i].compareTo(myArray[j]) < 0) {
+				sorted[k++] = myArray[i++];
+			}
+			else {
+				sorted[k++] = myArray[j++];	
+			}
+		}
+		
+		while (i <= q) {
+			sorted[k++] = myArray[i++];
+		}
+		
+		while (j <= r) {
+			sorted[k++] = myArray[j++];
+		}
+		
+		for (int l = p; l <= r; l++) { 
+			myArray[l] = sorted[l];
+		}
+	}
+	
 	public String toString() {
 		String ret = "";
 		for (int i=0;i<size;i++)
@@ -276,6 +330,7 @@ public class MyArrayList4 {
 				nOfData++;
 			}
 		}
+		
 		System.out.println("\n<Sequential Search>");
 		for (MyData k:temp) {
 			al.resetCount();
@@ -302,6 +357,29 @@ public class MyArrayList4 {
 		al.resetCount();
 		al.quickSort(0,inputSize-1);
 		System.out.println("\n<QuickSort Count> = "+al.getCount());
+		System.out.println(al.toString());
+		
+		al.removeAll();
+		System.out.println("\nInput Again !");
+		for (int i=0; i<inputSize; i++) 
+			al.add(input[i]);
+		System.out.println(al.toString());
+
+		al.resetCount();
+		al.quickSortIter(0,inputSize-1);
+		System.out.println("\n<QuickSortIter Count> = "+al.getCount());
+		System.out.println(al.toString());
+		
+		al.removeAll();
+		System.out.println("\nInput Again !");
+		for (int i=0; i<inputSize; i++) 
+			al.add(input[i]);
+		System.out.println(al.toString());
+
+		al.resetCount();
+		al.sorted = new MyData[al.myArray.length];
+		al.mergeSort(0,inputSize-1);
+		System.out.println("\n<MergeSort Count> = "+al.getCount());
 		System.out.println(al.toString());
 		
 		System.out.println("\n<Binary Search>");
