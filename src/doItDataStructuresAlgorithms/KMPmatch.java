@@ -63,7 +63,7 @@ public class KMPmatch {
 			writer.write("No pattern in the text.");
 		}
 		else {
-			writer.write("Pattern starts from index " + (idx + 1) + ".");
+			writer.write("Pattern starts from index " + idx + ".");
 		}
 		
 		writer.flush();

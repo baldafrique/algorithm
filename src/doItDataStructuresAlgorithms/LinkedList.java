@@ -3,18 +3,22 @@ package doItDataStructuresAlgorithms;
 import java.util.Comparator;
 
 public class LinkedList<E> {
+	
+	// node
+	@SuppressWarnings("hiding")
 	class Node<E> {
-		private E data;
-		private Node<E> next;
+		private E data; // data
+		private Node<E> next; // pointer which refers next node
 		
+		// constructor
 		Node(E data, Node<E> next) {
 			this.data = data;
 			this.next = next;
 		}
 	}
 	
-	private Node<E> head;
-	private Node<E> crnt;
+	private Node<E> head; // head node
+	private Node<E> crnt; // current node
 	
 	public LinkedList() {
 		head = crnt = null;
@@ -75,7 +79,8 @@ public class LinkedList<E> {
 			}
 		}
 	}
-	
+		
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void remove(Node p) {
 		if (head != null) {
 			if (p == head) {
