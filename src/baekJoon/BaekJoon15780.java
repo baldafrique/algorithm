@@ -1,4 +1,4 @@
-
+package baekJoon;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -6,31 +6,31 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class BaekJoon10409 {
+public class BaekJoon15780 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringTokenizer stringTokenizer; 
-
+		StringTokenizer stringTokenizer;
 		stringTokenizer = new StringTokenizer(reader.readLine());
-		@SuppressWarnings("unused")
-		int n = Integer.parseInt(stringTokenizer.nextToken());
-		int T = Integer.parseInt(stringTokenizer.nextToken());
-		int count = 0;
+		int N = Integer.parseInt(stringTokenizer.nextToken());
+		int K = Integer.parseInt(stringTokenizer.nextToken());
+		int cnt = 0;
+		boolean usable = false;
 		
 		stringTokenizer = new StringTokenizer(reader.readLine());
-		while (true) {
-			int minute = Integer.parseInt(stringTokenizer.nextToken());
-			if (T - minute >= 0) {
-				T -= minute;
-				count++;
+		for (int i = 0; i < K; i++) {
+			int num = Integer.parseInt(stringTokenizer.nextToken());
+			if (num % 2 != 0) {
+				num++;
 			}
-			else {
-				break;
+			cnt += num / 2;
+			if (N <= cnt) {
+				usable = true;
 			}
 		}
 		
-		writer.write(Integer.toString(count));
+		writer.write(usable ? "YES" : "NO");
+		writer.flush();
 		reader.close();
 		writer.close();
 	}

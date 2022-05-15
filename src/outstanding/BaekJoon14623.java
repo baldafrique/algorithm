@@ -1,3 +1,4 @@
+package outstanding;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -5,24 +6,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class BaekJoon15354 {
+public class BaekJoon14623 {
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-		
-		int number = Integer.parseInt(reader.readLine());
-		String list = reader.readLine();
-		int index = 0;
-		
-		for (int i = 0; i < number - 1; i++) {
-			char color = reader.readLine().charAt(0);
-			if (list.charAt(index) != color) {
-				list += color;
-			}
-		}
-		
-		writer.write(Integer.toString(list.length() + 1));
+		int B1 = Integer.parseInt(reader.readLine(), 2);
+		int B2 = Integer.parseInt(reader.readLine(), 2);
+		writer.write(Integer.toBinaryString(B1 * B2));
 		reader.close();
 		writer.close();
 	}

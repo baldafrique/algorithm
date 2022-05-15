@@ -1,3 +1,4 @@
+package outstanding;
 import java.util.Arrays;
 
 public class CodilityTriangle {

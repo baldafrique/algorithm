@@ -1,38 +1,38 @@
-
+package outstanding;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
-public class BaekJoon13229 {
+public class BaekJoon5607 {
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-			
+
 		int n = Integer.parseInt(reader.readLine());
-		int[] arr = new int[n];
-		String str = reader.readLine();
+		int A = 0;
+		int B = 0;
 		
 		for (int i = 0; i < n; i++) {
-			arr[i] = Integer.parseInt(str.split(" ")[i]);
-		}
-		
-		int m = Integer.parseInt(reader.readLine());
-		
-		for (int i = 0; i < m; i++) {
-			str = reader.readLine();
-			int start = Integer.parseInt(str.split(" ")[0]);
-			int end = Integer.parseInt(str.split(" ")[1]);
-			int sum = 0;
-			
-			for (int j = start; j <= end; j++) {
-				sum += arr[j];
+			StringTokenizer stringTokenizer = new StringTokenizer(reader.readLine());
+			int ACard = Integer.parseInt(stringTokenizer.nextToken());
+			int BCard = Integer.parseInt(stringTokenizer.nextToken());
+			if (ACard > BCard) {
+				A += ACard + BCard;
 			}
-			writer.write(sum + "\n");
+			else if (ACard < BCard) {
+				B += ACard + BCard;
+			}
+			else {
+				A += ACard;
+				B += BCard;
+			}
 		}
 		
-		writer.flush();
+		writer.write(A + " " + B);
 		reader.close();
 		writer.close();
 	}
