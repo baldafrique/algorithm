@@ -1,4 +1,4 @@
-package outstanding;
+package baekJoon;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,7 +20,7 @@ public class BaekJoon10409 {
 		int count = 0;
 		
 		stringTokenizer = new StringTokenizer(reader.readLine());
-		while (true) {
+		while (stringTokenizer.hasMoreTokens()) {
 			int minute = Integer.parseInt(stringTokenizer.nextToken());
 			if (T - minute >= 0) {
 				T -= minute;
