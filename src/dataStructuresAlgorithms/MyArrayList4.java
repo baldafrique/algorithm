@@ -1,6 +1,7 @@
 package dataStructuresAlgorithms;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class MyArrayList4 {
 
@@ -156,14 +157,55 @@ public class MyArrayList4 {
 		myArray[i]=myArray[j];
 		myArray[j]=temp;
 	}
+	
+	private class Range {
+		int p, r;
+		Range (int p, int r) {
+			this.p = p;
+			this.r = r;
+		}
+	}
 
 	public void quickSort(int p, int r) {
-		count++;
-		if (p>=r)
-			return;
-		int q=partition(p,r);
-		quickSort(p,q-1);
-		quickSort(q+1,r);
+//		count++;
+//		if (p>=r)
+//			return;
+//		int q=partition(p,r);
+//		quickSort(p,q-1);
+//		quickSort(q+1,r);
+		
+		// non-recursive style 1
+		Stack<Range> s = new Stack<>();
+		s.push(new Range(p, r));
+		int q;
+		Range t;
+		while (!s.isEmpty()) {
+			count++;
+			t = s.pop();
+			if (t.p < t.r) {
+				q = partition(t.p, t.r);
+				s.push(new Range(q + 1, t.r));
+				s.push(new Range(t.p, q - 1));
+			}
+		}
+		
+		// non-recursive style 2
+//		Stack<Integer> s = new Stack<>();
+//		s.push(p);
+//		s.push(r);
+//		int q, tp, tr;
+//		while (!s.isEmpty()) {
+//			count++;
+//			tr = s.pop();
+//			tp = s.pop();
+//			if (tp < tr) {
+//				q = partition(tp, tr);
+//				s.push(q + 1);
+//				s.push(tr);
+//				s.push(tp);
+//				s.push(q - 1);
+//			}
+//		}
 	}
 	
 	private int partition(int p, int r) {
@@ -184,56 +226,12 @@ public class MyArrayList4 {
 		swap(pivot, right);
 		return right;
 	}
-
-	private void quickSortIter(int l, int h) {
-		int[] stack = new int[h - l + 1];
-		
-		int top = -1;
-		
-		stack[++top] = l;
-		stack[++top] = h;
-		
-		while (top >= 0) {
-			count++;
-			
-			h = stack[top--];
-			l = stack[top--];
-			
-			int p = partitionIter(l, h);
-			
-			if (p - 1 > l) {
-				stack[++top] = l;
-				stack[++top] = p - 1;
-			}
-			
-			if (p + 1 < h) {
-				stack[++top] = p + 1;
-				stack[++top] = h;
-			}
-		}
-	}
 	
-	private int partitionIter(int low, int high) {
-		MyData pivot = myArray[high];
-		
-		int i = low - 1;
-		
-		for (int j = low; j <= high - 1; j++) {
-			if (myArray[j].compareTo(pivot) <= 0) {
-				i++;
-				
-				swap(i, j);
-			}
-		}
-		
-		swap(i + 1, high);
-		return i + 1;
-	}
+	MyData[] temp = new MyData[1000];
 	
 	private void mergeSort(int p, int r) {
+		count++;
 		if (p < r) {
-			count++;
-			
 			int q = (p + r) / 2;
 			mergeSort(p, q);
 			mergeSort(q + 1, r);
@@ -242,31 +240,114 @@ public class MyArrayList4 {
 	}
 	
 	private void merge(int p, int q, int r) {
+		int k = p;
 		int i = p;
 		int j = q + 1;
-		int k = p;
 		
 		while (i <= q && j <= r) {
 			if (myArray[i].compareTo(myArray[j]) < 0) {
-				sorted[k++] = myArray[i++];
+				temp[k++] = myArray[i++];
 			}
 			else {
-				sorted[k++] = myArray[j++];	
+				temp[k++] = myArray[j++];
 			}
 		}
 		
 		while (i <= q) {
-			sorted[k++] = myArray[i++];
+			temp[k++] = myArray[i++];
 		}
 		
 		while (j <= r) {
-			sorted[k++] = myArray[j++];
+			temp[k++] = myArray[j++];
 		}
 		
-		for (int l = p; l <= r; l++) { 
-			myArray[l] = sorted[l];
+		for (int l = p; l <= r; l++) {
+			myArray[l] = temp[l];
 		}
 	}
+
+//	private void myQuickSortIter(int l, int h) {
+//		int[] stack = new int[h - l + 1];
+//		
+//		int top = -1;
+//		
+//		stack[++top] = l;
+//		stack[++top] = h;
+//		
+//		while (top >= 0) {
+//			count++;
+//			
+//			h = stack[top--];
+//			l = stack[top--];
+//			
+//			int p = partitionIter(l, h);
+//			
+//			if (p - 1 > l) {
+//				stack[++top] = l;
+//				stack[++top] = p - 1;
+//			}
+//			
+//			if (p + 1 < h) {
+//				stack[++top] = p + 1;
+//				stack[++top] = h;
+//			}
+//		}
+//	}
+//	
+//	private int partitionIter(int low, int high) {
+//		MyData pivot = myArray[high];
+//		
+//		int i = low - 1;
+//		
+//		for (int j = low; j <= high - 1; j++) {
+//			if (myArray[j].compareTo(pivot) <= 0) {
+//				i++;
+//				
+//				swap(i, j);
+//			}
+//		}
+//		
+//		swap(i + 1, high);
+//		return i + 1;
+//	}
+//	
+//	private void myMergeSort(int p, int r) {
+//		if (p < r) {
+//			count++;
+//			
+//			int q = (p + r) / 2;
+//			myMergeSort(p, q);
+//			myMergeSort(q + 1, r);
+//			myMerge(p, q, r);
+//		}
+//	}
+//	
+//	private void myMerge(int p, int q, int r) {
+//		int i = p;
+//		int j = q + 1;
+//		int k = p;
+//		
+//		while (i <= q && j <= r) {
+//			if (myArray[i].compareTo(myArray[j]) < 0) {
+//				sorted[k++] = myArray[i++];
+//			}
+//			else {
+//				sorted[k++] = myArray[j++];	
+//			}
+//		}
+//		
+//		while (i <= q) {
+//			sorted[k++] = myArray[i++];
+//		}
+//		
+//		while (j <= r) {
+//			sorted[k++] = myArray[j++];
+//		}
+//		
+//		for (int l = p; l <= r; l++) { 
+//			myArray[l] = sorted[l];
+//		}
+//	}
 	
 	public String toString() {
 		String ret = "";
@@ -366,7 +447,7 @@ public class MyArrayList4 {
 		System.out.println(al.toString());
 
 		al.resetCount();
-		al.quickSortIter(0,inputSize-1);
+		al.quickSort(0,inputSize-1);
 		System.out.println("\n<QuickSortIter Count> = "+al.getCount());
 		System.out.println(al.toString());
 		
