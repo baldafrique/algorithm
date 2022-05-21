@@ -1,6 +1,7 @@
 package dataStructuresAlgorithms;
 
 public class SimpleTree {
+	
 	private class TreeNode {
 		char data;
 		TreeNode left;
@@ -32,8 +33,8 @@ public class SimpleTree {
 	private void showTree(TreeNode node) {
 		if (node != null) {
 			showTree(node.left);
-			System.out.println(node.data);
 			showTree(node.right);
+			System.out.println(node.data);
 		}
 	}
 	
