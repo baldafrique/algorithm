@@ -26,12 +26,12 @@ public class BinarySearchTree {
 		root = null;
 	}
 	
-	private void insert(char x) {
+	private void insert(char x) { // 17min~
 		if (root == null) {
 			root = new Node(x);
 		}
 		else if (x == root.data) {
-			System.out.println("\nDuplication not allowed");
+			System.out.print("\nDuplication not allowed");
 			return;
 		}
 		else if (x < root.data) {
