@@ -26,7 +26,7 @@ public class BinarySearchTree {
 		root = null;
 	}
 	
-	private void insert(char x) { // 17min~
+	private void insert(char x) {
 		if (root == null) {
 			root = new Node(x);
 		}
@@ -46,6 +46,7 @@ public class BinarySearchTree {
 		if (node == null) {
 			// insert
 			Node newNode = new Node(x);
+			newNode.parent = parent;
 			if (parent.data > x) {
 				parent.left = newNode;
 			}
@@ -92,7 +93,6 @@ public class BinarySearchTree {
 		
 	}
 	
-	@SuppressWarnings("unused")
 	private Node predecessor(Node v) {
 		if (v == null) {
 			return null;
@@ -119,16 +119,49 @@ public class BinarySearchTree {
 	private void delete(Node v, char x) {
 		// case 1 : no child
 		if (v.left == null && v.right == null) {
-			if (x < v.parent.data) {
+			if (root == v) {
+				root = null;
+			}
+			else if (x < v.parent.data) {
 				v.parent.left = null;
 			}
 			else {
 				v.parent.right = null;
 			}
 		}
+		
 		// case 2 : 1 child
+		if (v.left == null || v.right == null) {
+			if (v.right != null) {
+				if (v == v.parent.left) {
+					v.parent.left = v.right;
+				}
+				else {
+					v.parent.right = v.right;
+				}
+				v.right.parent = v.parent;
+			}
+			else {
+				if (v == v.parent.left) {
+					v.parent.left = v.left;
+				}
+				else {
+					v.parent.right = v.left;
+				}
+				v.left.parent = v.parent;
+			}
+		}
 		
 		// case 3 : 2 children <= successor/predecessor
+		if (v.left != null && v.right != null) {
+//			Node q = successor(v);
+//			v.data = q.data;
+//			delete(v.right, q.data);
+			
+			Node q = predecessor(v);
+			v.data = q.data;
+			delete(v.left, q.data);
+		}
 	}
 	
 	@SuppressWarnings("unused")
