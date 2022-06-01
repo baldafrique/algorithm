@@ -5,19 +5,25 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class BaekJoon8545 {
+public class BaekJoon24569 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-		String word = reader.readLine();
-		String reverse = "";
+		boolean isGoldTeam = true;
+		int count = 0;
+		int N = Integer.parseInt(reader.readLine());
 		
-		for (int i = word.length() - 1; i >= 0; i--) {
-			reverse += word.charAt(i);
+		for (int i = 0; i < N; i++) {
+			if (5 * Integer.parseInt(reader.readLine()) - 3 * Integer.parseInt(reader.readLine()) > 40) {
+				count++;
+			}
+			else {
+				isGoldTeam = false;
+			}
 		}
 		
-		writer.write(reverse);
+		writer.write(count + (isGoldTeam ? "+" : ""));
 		reader.close();
 		writer.close();
 	}
