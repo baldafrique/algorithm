@@ -2,10 +2,10 @@ package dataStructuresAlgorithms;
 
 import java.util.ArrayList;
 
-public class Heap {
+public class Heap1 {
 	ArrayList<Character> heap = new ArrayList<>();
 	
-	public Heap() {
+	public Heap1() {
 		heap.add(null);
 	}
 	
@@ -26,6 +26,20 @@ public class Heap {
 		}
 	}
 	
+	private void heapifyDownward(int i) {
+		int bigger = 2 * i; // left child
+		if (bigger >= heap.size()) {
+			return;
+		}
+		if ((bigger + 1) < heap.size() && heap.get(bigger + 1) > heap.get(bigger)) {
+			bigger++;
+		}
+		if (heap.get(bigger) > heap.get(i)) {
+			swap(bigger, i);
+			heapifyDownward(bigger);
+		}
+	}
+	
 	private void swap(int i, int j) {
 		char temp = heap.get(i);
 		heap.set(i, heap.get(j));
@@ -33,7 +47,18 @@ public class Heap {
 	}
 	
 	public Character delete() {
-		return null;
+		if (heap.size() <= 1) {
+			return null;
+		}
+		char retValue = heap.get(1);
+		if (heap.size() == 2) {
+			heap.remove(1);
+		}
+		else {
+			heap.set(1,  heap.remove(heap.size() - 1));
+			heapifyDownward(1);
+		}
+		return retValue;
 	}
 	
 	public void showHeap() {
@@ -41,7 +66,7 @@ public class Heap {
 	}
 	
 	public static void main(String[] args) {
-		Heap h = new Heap();
+		Heap1 h = new Heap1();
 		
 		for (int i = 0; i < 26; i++) {
 			h.insert((char) ((int)'A' + i));
@@ -50,10 +75,11 @@ public class Heap {
 		System.out.println("\nHeap Created : ");
 		h.showHeap();
 		
-//		System.out.println("\nSort [Max.Heap] ");
-//		Character c;
-//		while ((c = h.delete()) != null) {
-//			System.out.print(c + " ");
-//		}
+		System.out.println("\nSort [Max.Heap] ");
+		Character c;
+		while ((c = h.delete()) != null) {
+			System.out.print(c + " deleted : ");
+			h.showHeap();
+		}
 	}
 }
