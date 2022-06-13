@@ -1,19 +1,22 @@
+package reserve;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
 
-public class Main {
+public class BaekJoon24294 {
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringTokenizer stringTokenizer = new StringTokenizer(reader.readLine());
+		int side = 0;
 		
+		for (int i = 0; i < 4; i++) {
+			side += Integer.parseInt(reader.readLine());
+		}
 		
-		
+		writer.write(Integer.toString(side * 2));
 		writer.flush();
 		reader.close();
 		writer.close();

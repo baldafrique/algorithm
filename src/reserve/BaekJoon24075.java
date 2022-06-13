@@ -4,17 +4,20 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class BaekJoon24075 {
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-		String str = reader.readLine();
-		int A = Integer.parseInt(str.split(" ")[0]);
-		int B = Integer.parseInt(str.split(" ")[1]);
+		StringTokenizer stringTokenizer = new StringTokenizer(reader.readLine());
+		int A = Integer.parseInt(stringTokenizer.nextToken());
+		int B = Integer.parseInt(stringTokenizer.nextToken());
+		int max = Math.max(A + B, A - B);
+		int min = Math.min(A + B, A - B);
 		
-		writer.write((A + B > A - B ? A + B : A - B) + "\n");
-		writer.write(Integer.toString(A + B < A - B ? A + B : A - B));
+		writer.write(max + "\n" + min);
 		writer.flush();
 		reader.close();
 		writer.close();

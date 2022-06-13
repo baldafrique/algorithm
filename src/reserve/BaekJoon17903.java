@@ -1,19 +1,17 @@
+package reserve;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
 
-public class Main {
+public class BaekJoon17903 {
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringTokenizer stringTokenizer = new StringTokenizer(reader.readLine());
 		
-		
-		
+		writer.write(Integer.parseInt(reader.readLine().split(" ")[0]) < 8 ? "unsatisfactory" : "satisfactory");
 		writer.flush();
 		reader.close();
 		writer.close();
