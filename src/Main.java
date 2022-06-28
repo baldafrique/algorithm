@@ -10,11 +10,9 @@ public class Main {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		int[] old = {2, 3, 4, 5, 6};
-		int[] fresh = new int[7]; 
-		System.arraycopy(old, 1, fresh, 2, 2);
+
 		
-		
+		writer.flush();
 		reader.close();
 		writer.close();
 	}
