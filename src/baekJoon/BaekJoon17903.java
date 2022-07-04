@@ -1,8 +1,5 @@
 package baekJoon;
-<<<<<<< HEAD
 
-=======
->>>>>>> beb6365c4766bf2da33926de94c72a33a6529941
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
